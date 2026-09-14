@@ -29,6 +29,18 @@ import com.hayidev.app.ui.screens.settings.SettingsScreen
 import com.hayidev.app.ui.screens.video.VideoCallScreen
 import com.hayidev.app.ui.screens.region.RegionSelectionScreen
 import com.hayidev.app.ui.screens.report.ReportScreen
+import com.hayidev.app.ui.screens.game.GamesHubScreen
+import com.hayidev.app.ui.screens.game.LuckyGameScreen
+import com.hayidev.app.ui.screens.game.LuckyGiftScreen
+import com.hayidev.app.ui.screens.game.JackpotScreen
+import com.hayidev.app.ui.screens.game.RocketGameScreen
+import com.hayidev.app.ui.screens.game.DiceGameScreen
+import com.hayidev.app.ui.screens.game.CoinFlipScreen
+import com.hayidev.app.ui.screens.game.ScratchCardScreen
+import com.hayidev.app.ui.screens.game.LuckyBoxScreen
+import com.hayidev.app.ui.screens.game.MiniGolfScreen
+import com.hayidev.app.ui.screens.game.QuizGameScreen
+import com.hayidev.app.ui.screens.game.MemoryGameScreen
 
 sealed class Screen(val route: String) {
     data object Login : Screen("login")
@@ -40,6 +52,20 @@ sealed class Screen(val route: String) {
     data object GiftStore : Screen("gift_store")
     data object CreateLiveRoom : Screen("create_live_room")
     data object RegionSelection : Screen("region_selection")
+    data object GamesHub : Screen("games_hub")
+    data object LuckyGame : Screen("lucky_game/{roomId}") {
+        fun createRoute(roomId: String) = "lucky_game/$roomId"
+    }
+    data object LuckyGift : Screen("lucky_gift")
+    data object Jackpot : Screen("jackpot")
+    data object Rocket : Screen("rocket")
+    data object Dice : Screen("dice")
+    data object CoinFlip : Screen("coinflip")
+    data object Scratch : Screen("scratch")
+    data object LuckyBox : Screen("lucky_box")
+    data object MiniGolf : Screen("mini_golf")
+    data object Quiz : Screen("quiz")
+    data object Memory : Screen("memory")
 
     data object Chat : Screen("chat/{roomId}") {
         fun createRoute(roomId: String) = "chat/$roomId"
@@ -286,6 +312,69 @@ fun HayiDevNavHost() {
                     onReportSubmitted = { navController.popBackStack() },
                     onBackClick = { navController.popBackStack() }
                 )
+            }
+
+            // Game Routes
+            composable(Screen.GamesHub.route) {
+                GamesHubScreen(
+                    onGameClick = { route -> navController.navigate(route) },
+                    onBackClick = { navController.popBackStack() }
+                )
+            }
+
+            composable(
+                route = Screen.LuckyGame.route,
+                arguments = listOf(navArgument("roomId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val roomId = backStackEntry.arguments?.getString("roomId") ?: ""
+                LuckyGameScreen(
+                    roomId = roomId,
+                    onBackClick = { navController.popBackStack() },
+                    onBetPlaced = { }
+                )
+            }
+
+            composable(Screen.LuckyGift.route) {
+                LuckyGiftScreen(
+                    onBackClick = { navController.popBackStack() },
+                    onGiftSent = { _, _ -> }
+                )
+            }
+
+            composable(Screen.Jackpot.route) {
+                JackpotScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.Rocket.route) {
+                RocketGameScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.Dice.route) {
+                DiceGameScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.CoinFlip.route) {
+                CoinFlipScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.Scratch.route) {
+                ScratchCardScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.LuckyBox.route) {
+                LuckyBoxScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.MiniGolf.route) {
+                MiniGolfScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.Quiz.route) {
+                QuizGameScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            composable(Screen.Memory.route) {
+                MemoryGameScreen(onBackClick = { navController.popBackStack() })
             }
         }
     }
