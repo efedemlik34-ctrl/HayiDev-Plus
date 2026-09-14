@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme -->
+    <style name="Theme.HayiDev" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent_purple</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    
+    <!-- Splash Theme -->
+    <style name="Theme.HayiDev.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+    </style>
+    
+    <!-- Dialog Theme -->
+    <style name="Theme.HayiDev.Dialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorAccent">@color/accent_purple</item>
+    </style>
+    
+    <!-- Bottom Sheet Theme -->
+    <style name="Theme.HayiDev.BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="colorPrimary">@color/primary_light</item>
+    </style>
+</resources>

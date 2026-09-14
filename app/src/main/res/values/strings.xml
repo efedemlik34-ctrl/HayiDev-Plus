@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HayiDev++</string>
+    
+    <!-- Navigation -->
+    <string name="nav_discover">Keşfet</string>
+    <string name="nav_chat">Sohbet</string>
+    <string name="nav_live">Canlı</string>
+    <string name="nav_profile">Profil</string>
+    
+    <!-- Discover -->
+    <string name="discover_like">Beğen</string>
+    <string name="discover_pass">Geç</string>
+    <string name="discover_super_like">Süper Beğen</string>
+    <string name="discover_boost">Boost</string>
+    <string name="discover_undo">Geri Al</string>
+    <string name="discover_empty">Bugün için profil bitti!</string>
+    <string name="discover_empty_subtitle">Yarın tekrar kontrol et veya Premium\'a yükselt</string>
+    
+    <!-- Chat -->
+    <string name="chat_input_hint">Mesaj yaz…</string>
+    <string name="chat_send">Gönder</string>
+    <string name="chat_search">Sohbet ara…</string>
+    <string name="chat_tab_all">Tümü</string>
+    <string name="chat_tab_unread">Okunmamış</string>
+    <string name="chat_tab_matches">Eşleşmeler</string>
+    
+    <!-- Live -->
+    <string name="live_start">Yayın Aç</string>
+    <string name="live_title_hint">Yayın başlığı</string>
+    <string name="live_description_hint">Yayın açıklaması</string>
+    <string name="live_type_public">Herkese Açık</string>
+    <string name="live_type_followers">Takipçiler</string>
+    <string name="live_type_private">Özel</string>
+    <string name="live_badge">CANLI</string>
+    
+    <!-- Profile -->
+    <string name="profile_edit">Profili Düzenle</string>
+    <string name="profile_likes">Beğeni</string>
+    <string name="profile_matches">Eşleşme</string>
+    <string name="profile_live_count">Canlı</string>
+    <string name="profile_interests">İlgi Alanlarım</string>
+    <string name="profile_photos">Fotoğraflarım</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_account">Hesap</string>
+    <string name="settings_edit_profile">Profili Düzenle</string>
+    <string name="settings_photos">Fotoğraflarım</string>
+    <string name="settings_location">Konum</string>
+    <string name="settings_preferences">Tercihler</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_notifications">Bildirimler</string>
+    <string name="settings_privacy">Gizlilik ve Güvenlik</string>
+    <string name="settings_blocked">Engellenen Kullanıcılar</string>
+    <string name="settings_visibility">Görünürlük</string>
+    <string name="settings_security">Hesap Güvenliği</string>
+    <string name="settings_support">Destek</string>
+    <string name="settings_help">Yardım Merkezi</string>
+    <string name="settings_feedback">Geri Bildirim</string>
+    <string name="settings_terms">Kullanım Şartları</string>
+    <string name="settings_logout">Çıkış Yap</string>
+    
+    <!-- Gift Store -->
+    <string name="gift_store_title">Hediye Mağazası</string>
+    <string name="gift_buy_coins">Coin Satın Al</string>
+    <string name="gift_send">Hediye Gönder</string>
+    
+    <!-- Login -->
+    <string name="login_google">Google ile Giriş Yap</string>
+    <string name="login_facebook">Facebook ile Giriş Yap</string>
+    <string name="login_email">E-posta ile Giriş Yap</string>
+    <string name="login_terms">Giriş yaparak Kullanım Şartları ve Gizlilik Politikamızı kabul etmiş olursunuz.</string>
+    
+    <!-- Video Call -->
+    <string name="video_call_end">Aramayı Bitir</string>
+    <string name="video_call_mute">Mikrofon</string>
+    <string name="video_call_video">Kamera</string>
+    <string name="video_call_speaker">Hoparlör</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_messages">Mesajlar</string>
+    <string name="notification_channel_live">Canlı Yayın</string>
+    <string name="notification_channel_gifts">Hediyeler</string>
+    <string name="notification_messages_desc">Yeni mesaj bildirimleri</string>
+    <string name="notification_live_desc">Canlı yayın bildirimleri</string>
+    <string name="notification_gifts_desc">Hediye bildirimleri</string>
+</resources>
