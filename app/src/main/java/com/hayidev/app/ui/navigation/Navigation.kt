@@ -48,6 +48,26 @@ import com.hayidev.app.ui.screens.premium.PremiumScreen
 import com.hayidev.app.ui.screens.wallet.WalletScreen
 import com.hayidev.app.ui.screens.notification.NotificationScreen
 import com.hayidev.app.ui.screens.search.SearchScreen
+import com.hayidev.app.ui.screens.story.StoryViewScreen
+import com.hayidev.app.ui.screens.story.StoryCreateScreen
+import com.hayidev.app.ui.screens.edit_profile.EditProfileScreen
+import com.hayidev.app.ui.screens.followers.FollowersScreen
+import com.hayidev.app.ui.screens.following.FollowingScreen
+import com.hayidev.app.ui.screens.sticker.StickerStoreScreen
+import com.hayidev.app.ui.screens.theme_store.ThemeStoreScreen
+import com.hayidev.app.ui.screens.achievement.AchievementScreen
+import com.hayidev.app.ui.screens.leaderboard.LeaderboardScreen
+import com.hayidev.app.ui.screens.referral.ReferralScreen
+import com.hayidev.app.ui.screens.verification.VerificationScreen
+import com.hayidev.app.ui.screens.privacy.PrivacyScreen
+import com.hayidev.app.ui.screens.help.HelpScreen
+import com.hayidev.app.ui.screens.about.AboutScreen
+import com.hayidev.app.ui.screens.feedback.FeedbackScreen
+import com.hayidev.app.ui.screens.language.LanguageScreen
+import com.hayidev.app.ui.screens.blocked.BlockedUsersScreen
+import com.hayidev.app.ui.screens.agreement.AgreementScreen
+import com.hayidev.app.ui.screens.photo_viewer.PhotoViewerScreen
+import com.hayidev.app.ui.screens.video_player.VideoPlayerScreen
 import android.net.Uri
 
 sealed class Screen(val route: String) {
@@ -67,7 +87,21 @@ sealed class Screen(val route: String) {
     data object Search : Screen("search")
     data object GamesHub : Screen("games_hub")
     data object CreateLiveRoom : Screen("create_live_room")
-    
+    data object StoryCreate : Screen("story_create")
+    data object EditProfile : Screen("edit_profile")
+    data object StickerStore : Screen("sticker_store")
+    data object ThemeStore : Screen("theme_store")
+    data object Achievement : Screen("achievement")
+    data object Leaderboard : Screen("leaderboard")
+    data object Referral : Screen("referral")
+    data object Verification : Screen("verification")
+    data object Privacy : Screen("privacy")
+    data object Help : Screen("help")
+    data object About : Screen("about")
+    data object Feedback : Screen("feedback")
+    data object Language : Screen("language")
+    data object BlockedUsers : Screen("blocked_users")
+
     data object LuckyGame : Screen("lucky_game/{roomId}") {
         fun createRoute(roomId: String) = "lucky_game/$roomId"
     }
@@ -100,6 +134,30 @@ sealed class Screen(val route: String) {
 
     data object Report : Screen("report/{userId}") {
         fun createRoute(userId: String) = "report/$userId"
+    }
+
+    data object StoryView : Screen("story/{userId}") {
+        fun createRoute(userId: String) = "story/$userId"
+    }
+
+    data object Followers : Screen("followers/{userId}") {
+        fun createRoute(userId: String) = "followers/$userId"
+    }
+
+    data object Following : Screen("following/{userId}") {
+        fun createRoute(userId: String) = "following/$userId"
+    }
+
+    data object Agreement : Screen("agreement/{type}") {
+        fun createRoute(type: String) = "agreement/$type"
+    }
+
+    data object PhotoViewer : Screen("photo/{url}") {
+        fun createRoute(url: String) = "photo/${Uri.encode(url)}"
+    }
+
+    data object VideoPlayer : Screen("video/{url}") {
+        fun createRoute(url: String) = "video/${Uri.encode(url)}"
     }
 }
 
@@ -282,6 +340,48 @@ fun HayiDevNavHost(
                     },
                     onGiftStoreClick = {
                         navController.navigate(Screen.GiftStore.route)
+                    },
+                    onEditProfileClick = {
+                        navController.navigate(Screen.EditProfile.route)
+                    },
+                    onPremiumClick = {
+                        navController.navigate(Screen.Premium.route)
+                    },
+                    onAchievementsClick = {
+                        navController.navigate(Screen.Achievement.route)
+                    },
+                    onLeaderboardClick = {
+                        navController.navigate(Screen.Leaderboard.route)
+                    },
+                    onReferralClick = {
+                        navController.navigate(Screen.Referral.route)
+                    },
+                    onVerificationClick = {
+                        navController.navigate(Screen.Verification.route)
+                    },
+                    onStickerStoreClick = {
+                        navController.navigate(Screen.StickerStore.route)
+                    },
+                    onThemeStoreClick = {
+                        navController.navigate(Screen.ThemeStore.route)
+                    },
+                    onLanguageClick = {
+                        navController.navigate(Screen.Language.route)
+                    },
+                    onPrivacyClick = {
+                        navController.navigate(Screen.Privacy.route)
+                    },
+                    onHelpClick = {
+                        navController.navigate(Screen.Help.route)
+                    },
+                    onAboutClick = {
+                        navController.navigate(Screen.About.route)
+                    },
+                    onFeedbackClick = {
+                        navController.navigate(Screen.Feedback.route)
+                    },
+                    onBlockedUsersClick = {
+                        navController.navigate(Screen.BlockedUsers.route)
                     }
                 )
             }
@@ -464,6 +564,235 @@ fun HayiDevNavHost(
 
             composable(Screen.Memory.route) {
                 MemoryGameScreen(onBackClick = { navController.popBackStack() })
+            }
+
+            // Story screens
+            composable(
+                route = Screen.StoryView.route,
+                arguments = listOf(navArgument("userId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val userId = backStackEntry.arguments?.getString("userId") ?: ""
+                StoryViewScreen(
+                    onBack = { navController.popBackStack() },
+                    onUserClick = { uid ->
+                        navController.navigate(Screen.OtherProfile.createRoute(uid))
+                    },
+                    onReply = { uid, _ ->
+                        navController.navigate(Screen.Chat.createRoute(uid))
+                    },
+                    storyIndex = 0
+                )
+            }
+
+            composable(Screen.StoryCreate.route) {
+                StoryCreateScreen(
+                    onBack = { navController.popBackStack() },
+                    onPostStory = { navController.popBackStack() },
+                    onCameraClick = { }
+                )
+            }
+
+            // Edit Profile
+            composable(Screen.EditProfile.route) {
+                EditProfileScreen(
+                    onBack = { navController.popBackStack() },
+                    onSaveChanges = { navController.popBackStack() },
+                    onAddPhoto = { },
+                    onRemovePhoto = { }
+                )
+            }
+
+            // Followers / Following
+            composable(
+                route = Screen.Followers.route,
+                arguments = listOf(navArgument("userId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val userId = backStackEntry.arguments?.getString("userId") ?: ""
+                FollowersScreen(
+                    onBack = { navController.popBackStack() },
+                    onUserClick = { uid ->
+                        navController.navigate(Screen.OtherProfile.createRoute(uid))
+                    },
+                    userId = userId
+                )
+            }
+
+            composable(
+                route = Screen.Following.route,
+                arguments = listOf(navArgument("userId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val userId = backStackEntry.arguments?.getString("userId") ?: ""
+                FollowingScreen(
+                    onBack = { navController.popBackStack() },
+                    onUserClick = { uid ->
+                        navController.navigate(Screen.OtherProfile.createRoute(uid))
+                    },
+                    userId = userId
+                )
+            }
+
+            // Sticker Store
+            composable(Screen.StickerStore.route) {
+                StickerStoreScreen(
+                    onBack = { navController.popBackStack() },
+                    onBuyStickerPack = { },
+                    onBuyCoins = { navController.navigate(Screen.Wallet.route) }
+                )
+            }
+
+            // Theme Store
+            composable(Screen.ThemeStore.route) {
+                ThemeStoreScreen(
+                    onBack = { navController.popBackStack() },
+                    onBuyTheme = { },
+                    onBuyCoins = { navController.navigate(Screen.Wallet.route) }
+                )
+            }
+
+            // Achievements
+            composable(Screen.Achievement.route) {
+                AchievementScreen(
+                    onBack = { navController.popBackStack() },
+                    onShareAchievement = { },
+                    onClaimReward = { }
+                )
+            }
+
+            // Leaderboard
+            composable(Screen.Leaderboard.route) {
+                LeaderboardScreen(
+                    onBack = { navController.popBackStack() },
+                    onUserClick = { uid ->
+                        navController.navigate(Screen.OtherProfile.createRoute(uid))
+                    },
+                    onInviteFriends = { navController.navigate(Screen.Referral.route) }
+                )
+            }
+
+            // Referral
+            composable(Screen.Referral.route) {
+                ReferralScreen(
+                    onBack = { navController.popBackStack() },
+                    onShareCode = { },
+                    onCopyCode = { },
+                    onLearnMore = { }
+                )
+            }
+
+            // Verification
+            composable(Screen.Verification.route) {
+                VerificationScreen(
+                    onBack = { navController.popBackStack() },
+                    onUploadSelfie = { },
+                    onUploadID = { },
+                    onSubmit = { },
+                    onContactSupport = { }
+                )
+            }
+
+            // Privacy
+            composable(Screen.Privacy.route) {
+                PrivacyScreen(
+                    onBack = { navController.popBackStack() },
+                    onBlockedUsers = {
+                        navController.navigate(Screen.BlockedUsers.route)
+                    },
+                    onMutedUsers = { },
+                    onDataDownload = { },
+                    onDeleteAccount = { },
+                    onPrivacyPolicy = {
+                        navController.navigate(Screen.Agreement.createRoute("privacy"))
+                    }
+                )
+            }
+
+            // Help
+            composable(Screen.Help.route) {
+                HelpScreen(
+                    onBack = { navController.popBackStack() },
+                    onContactSupport = { },
+                    onReportBug = { },
+                    onFeatureRequest = { }
+                )
+            }
+
+            // About
+            composable(Screen.About.route) {
+                AboutScreen(
+                    onBack = { navController.popBackStack() },
+                    onOpenUrl = { },
+                    onRateApp = { },
+                    onShareApp = { },
+                    onOpenLicenses = { }
+                )
+            }
+
+            // Feedback
+            composable(Screen.Feedback.route) {
+                FeedbackScreen(
+                    onBack = { navController.popBackStack() },
+                    onSubmitFeedback = { _, _, _ -> },
+                    onRateApp = { }
+                )
+            }
+
+            // Language
+            composable(Screen.Language.route) {
+                LanguageScreen(
+                    onBack = { navController.popBackStack() },
+                    onLanguageSelected = { }
+                )
+            }
+
+            // Blocked Users
+            composable(Screen.BlockedUsers.route) {
+                BlockedUsersScreen(
+                    onBack = { navController.popBackStack() },
+                    onUnblockUser = { },
+                    onAddBlockedUser = { }
+                )
+            }
+
+            // Agreement (Terms / Privacy Policy)
+            composable(
+                route = Screen.Agreement.route,
+                arguments = listOf(navArgument("type") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val type = backStackEntry.arguments?.getString("type") ?: "terms"
+                AgreementScreen(
+                    onBack = { navController.popBackStack() },
+                    type = type
+                )
+            }
+
+            // Photo Viewer
+            composable(
+                route = Screen.PhotoViewer.route,
+                arguments = listOf(navArgument("url") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val url = Uri.decode(backStackEntry.arguments?.getString("url") ?: "")
+                PhotoViewerScreen(
+                    onBack = { navController.popBackStack() },
+                    onShare = { },
+                    onDownload = { },
+                    onReport = { },
+                    photoUrl = url
+                )
+            }
+
+            // Video Player
+            composable(
+                route = Screen.VideoPlayer.route,
+                arguments = listOf(navArgument("url") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val url = Uri.decode(backStackEntry.arguments?.getString("url") ?: "")
+                VideoPlayerScreen(
+                    onBack = { navController.popBackStack() },
+                    onShare = { },
+                    onLike = { },
+                    onComment = { },
+                    videoUrl = url
+                )
             }
         }
     }

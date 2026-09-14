@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App -->
     <string name="app_name">HayiDev++</string>
+
+    <!-- Navigation -->
     <string name="nav_home">Startseite</string>
     <string name="nav_discover">Entdecken</string>
     <string name="nav_chat">Chat</string>
@@ -9,8 +12,10 @@
     <string name="nav_settings">Einstellungen</string>
     <string name="nav_store">Shop</string>
     <string name="nav_notifications">Benachrichtigungen</string>
-    <string name="nav_achievements">Errungenschaften</string>
-    <string name="nav_leaderboard">Bestenliste</string>
+    <string name="nav_achievements">Erfolge</string>
+    <string name="nav_leaderboard">Rangliste</string>
+
+    <!-- Login / Register -->
     <string name="login_title">Anmelden</string>
     <string name="register_title">Registrieren</string>
     <string name="login_with_google">Mit Google anmelden</string>
@@ -33,9 +38,9 @@
     <string name="or_continue_with">oder fortfahren mit</string>
     <string name="already_have_account">Bereits ein Konto?</string>
     <string name="dont_have_account">Noch kein Konto?</string>
-    <string name="agree_terms">Mit der Anmeldung stimmen Sie unseren <u>Nutzungsbedingungen</u> und der <u>Datenschutzrichtlinie</u> zu.</string>
+    <string name="agree_terms">Mit der Anmeldung stimmen Sie unseren <u>Nutzungsbedingungen</u> und <u>Datenschutzrichtlinien</u> zu.</string>
     <string name="verify_email">E-Mail verifizieren</string>
-    <string name="verify_email_desc">Wir haben einen Verifizierungslink an Ihre E-Mail gesendet.</string>
+    <string name="verify_email_desc">Wir haben einen Bestätigungslink an Ihre E-Mail gesendet.</string>
     <string name="resend_code">Code erneut senden</string>
     <string name="code_sent">Code gesendet!</string>
     <string name="invalid_email">Ungültige E-Mail-Adresse</string>
@@ -44,6 +49,8 @@
     <string name="account_disabled">Konto ist deaktiviert</string>
     <string name="too_many_attempts">Zu viele Versuche. Bitte versuchen Sie es später erneut.</string>
     <string name="network_error">Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.</string>
+
+    <!-- Discover / Matching -->
     <string name="discover_title">Entdecken</string>
     <string name="swipe_right">Gefällt mir</string>
     <string name="swipe_left">Überspringen</string>
@@ -54,7 +61,7 @@
     <string name="send_message">Nachricht senden</string>
     <string name="keep_swiping">Weiter swipen</string>
     <string name="no_more_profiles">Keine weiteren Profile</string>
-    <string name="profiles_around">Profile in der Nähe</string>
+    <string name="profiles_around">Profile in deiner Nähe</string>
     <string name="distance_away">%s km entfernt</string>
     <string name="age_range">Altersbereich</string>
     <string name="distance_range">Entfernungsbereich</string>
@@ -66,14 +73,14 @@
     <string name="filter_apply">Anwenden</string>
     <string name="filter_reset">Zurücksetzen</string>
     <string name="boost_profile">Profil boosten</string>
-    <string name="boost_active">Boosting für %d Minuten</string>
+    <string name="boost_active">Boost für %d Minuten aktiv</string>
     <string name="boost_available">Boost verfügbar</string>
     <string name="no_boosts">Keine Boosts übrig</string>
     <string name="new_match">Neues Match</string>
     <string name="match_expired">Match abgelaufen</string>
     <string name="undo_swipe">Rückgängig</string>
     <string name="rewinds_left">%d Rückgängig übrig</string>
-    <string name="see_who_likes">Wer mag mich?</string>
+    <string name="see_who_likes">Sieh, wer dich mag</string>
     <string name="likes_you">%s mag dich</string>
     <string name="recent_activity">Letzte Aktivität</string>
     <string name="online_now">Jetzt online</string>
@@ -85,10 +92,12 @@
     <string name="my_photos">Meine Fotos</string>
     <string name="add_photo">Foto hinzufügen</string>
     <string name="remove_photo">Foto entfernen</string>
-    <string name="reorder_photos">Fotos umsortieren</string>
+    <string name="reorder_photos">Fotos sortieren</string>
     <string name="photo_rules">Fotoregeln</string>
     <string name="photo_too_few">Mindestens 2 Fotos erforderlich</string>
     <string name="inappropriate_photo">Unangemessenes Foto erkannt</string>
+
+    <!-- Chat / Messaging -->
     <string name="chat_title">Chat</string>
     <string name="chats">Chats</string>
     <string name="new_message">Neue Nachricht</string>
@@ -98,7 +107,7 @@
     <string name="send_image">Foto senden</string>
     <string name="send_video">Video senden</string>
     <string name="send_gif">GIF senden</string>
-    <string name="send_sticker">Sticker senden</string>
+    <string name="send_sticker">Aufkleber senden</string>
     <string name="send_location">Standort senden</string>
     <string name="voice_message">Sprachnachricht</string>
     <string name="video_call">Videoanruf</string>
@@ -113,12 +122,12 @@
     <string name="message_read">Gelesen</string>
     <string name="message_failed">Nachricht konnte nicht gesendet werden</string>
     <string name="delete_message">Nachricht löschen</string>
-    <string name="delete_message_confirm">Möchten Sie diese Nachricht wirklich löschen?</string>
+    <string name="delete_message_confirm">Möchtest du diese Nachricht wirklich löschen?</string>
     <string name="report_message">Nachricht melden</string>
     <string name="block_user">Benutzer blockieren</string>
-    <string name="unblock_user">Blockierung aufheben</string>
-    <string name="block_confirm">Möchten Sie diesen Benutzer wirklich blockieren?</string>
-    <string name="unblock_confirm">Möchten Sie die Blockierung dieses Benutzers wirklich aufheben?</string>
+    <string name="unblock_user">Benutzer entsperren</string>
+    <string name="block_confirm">Möchtest du diesen Benutzer wirklich blockieren?</string>
+    <string name="unblock_confirm">Möchtest du diesen Benutzer wirklich entsperren?</string>
     <string name="blocked_users">Blockierte Benutzer</string>
     <string name="no_blocked_users">Keine blockierten Benutzer</string>
     <string name="chat_settings">Chat-Einstellungen</string>
@@ -140,18 +149,20 @@
     <string name="video_call_incoming">Eingehender Videoanruf</string>
     <string name="video_call_outgoing">Ausgehender Videoanruf</string>
     <string name="video_call_ended">Videoanruf beendet</string>
-    <string name="mute">Stumm</string>
-    <string name="unmute">Ton an</string>
+    <string name="mute">Stummschalten</string>
+    <string name="unmute">Stummschaltung aufheben</string>
     <string name="speaker">Lautsprecher</string>
     <string name="flip_camera">Kamera wechseln</string>
     <string name="end_call">Anruf beenden</string>
     <string name="accept_call">Annehmen</string>
     <string name="decline_call">Ablehnen</string>
-    <string name="message_search">Chat suchen</string>
+    <string name="message_search">Chat durchsuchen</string>
     <string name="no_results">Keine Ergebnisse gefunden</string>
-    <string name="pinned_messages">Angepinnte Nachrichten</string>
+    <string name="pinned_messages">Angeheftete Nachrichten</string>
     <string name="pin_message">Nachricht anheften</string>
-    <string name="unpin_message">Anheften lösen</string>
+    <string name="unpin_message">Nachricht lösen</string>
+
+    <!-- Live Streaming -->
     <string name="live_title">Live</string>
     <string name="go_live">Live gehen</string>
     <string name="live_streaming">Live-Streaming</string>
@@ -164,11 +175,11 @@
     <string name="live_viewers">Zuschauer</string>
     <string name="live_gifts">Live-Geschenke</string>
     <string name="send_gift">Geschenk senden</string>
-    <string name="gift_coins">Geschenk-Coins</string>
+    <string name="gift_coins">Geschenk-Münzen</string>
     <string name="gift_sent">Geschenk gesendet!</string>
     <string name="gift_received">%s hat dir ein Geschenk gesendet!</string>
-    <string name="top_gifters">Top-Schenker</string>
-    <string name="gift_leaderboard">Geschenk-Bestenliste</string>
+    <string name="top_gifters">Top-Geschenkgeber</string>
+    <string name="gift_leaderboard">Geschenk-Rangliste</string>
     <string name="live_chat">Live-Chat</string>
     <string name="live_chat_hint">Nachricht eingeben...</string>
     <string name="share_live">Live teilen</string>
@@ -196,13 +207,15 @@
     <string name="live_gift_history">Geschenkverlauf</string>
     <string name="live_earnings">Einnahmen</string>
     <string name="live_with_friends">Live mit Freunden</string>
+
+    <!-- Gift System -->
     <string name="gift_store">Geschenkeladen</string>
-    <string name="coins">Coins</string>
+    <string name="coins">Münzen</string>
     <string name="diamonds">Diamanten</string>
-    <string name="buy_coins">Coins kaufen</string>
+    <string name="buy_coins">Münzen kaufen</string>
     <string name="buy_diamonds">Diamanten kaufen</string>
-    <string name="coin_balance">Coin-Guthaben: %d</string>
-    <string name="diamond_balance">Diamant-Guthaben: %d</string>
+    <string name="coin_balance">Münzguthaben: %d</string>
+    <string name="diamond_balance">Diamantenguthaben: %d</string>
     <string name="gift_rose">Rose</string>
     <string name="gift_heart">Herz</string>
     <string name="gift_fire">Feuer</string>
@@ -216,31 +229,31 @@
     <string name="gift_category_popular">Beliebt</string>
     <string name="gift_category_special">Spezial</string>
     <string name="gift_category_luxury">Luxus</string>
-    <string name="gift_category_cute">Niedlich</string>
+    <string name="gift_category_cute">Süß</string>
     <string name="gift_category_fun">Spaß</string>
     <string name="gift_category_festival">Festival</string>
-    <string name="gift_price">%d Coins</string>
-    <string name="gift_insufficient_coins">Unzureichende Coins</string>
+    <string name="gift_price">%d Münzen</string>
+    <string name="gift_insufficient_coins">Nicht genügend Münzen</string>
     <string name="gift_sent_success">Geschenk erfolgreich gesendet!</string>
     <string name="gift_received_from">Du hast ein Geschenk von %s erhalten</string>
     <string name="gift_claim">Geschenk einlösen</string>
     <string name="gift_claimed">Geschenk eingelöst!</string>
     <string name="daily_gift">Tägliches Geschenk</string>
     <string name="daily_gift_claim">Löse dein tägliches Geschenk ein</string>
-    <string name="daily_gift_coins">Verdiene %d Coins!</string>
-    <string name="gift_wheel">Geschenksrad</string>
+    <string name="daily_gift_coins">Verdiene %d Münzen!</string>
+    <string name="gift_wheel">Geschenkrad</string>
     <string name="spin_wheel">Drehen</string>
-    <string name="wheel_prize">Du hast %d Coins gewonnen!</string>
+    <string name="wheel_prize">Du hast %d Münzen gewonnen!</string>
     <string name="gift_free">Kostenloses Geschenk</string>
     <string name="gift_sent_history">Gesendete Geschenke</string>
     <string name="gift_received_history">Erhaltene Geschenke</string>
-    <string name="gift_total_sent">Insgesamt gesendet: %d</string>
-    <string name="gift_total_received">Insgesamt erhalten: %d</string>
-    <string name="coin_package_1">100 Coins</string>
-    <string name="coin_package_2">500 Coins</string>
-    <string name="coin_package_3">1000 Coins</string>
-    <string name="coin_package_4">5000 Coins</string>
-    <string name="coin_package_5">10000 Coins</string>
+    <string name="gift_total_sent">Gesamt gesendet: %d</string>
+    <string name="gift_total_received">Gesamt erhalten: %d</string>
+    <string name="coin_package_1">100 Münzen</string>
+    <string name="coin_package_2">500 Münzen</string>
+    <string name="coin_package_3">1000 Münzen</string>
+    <string name="coin_package_4">5000 Münzen</string>
+    <string name="coin_package_5">10000 Münzen</string>
     <string name="diamond_package_1">100 Diamanten</string>
     <string name="diamond_package_2">500 Diamanten</string>
     <string name="diamond_package_3">1000 Diamanten</string>
@@ -249,21 +262,23 @@
     <string name="purchase_success">Kauf erfolgreich!</string>
     <string name="purchase_failed">Kauf fehlgeschlagen</string>
     <string name="purchase_restored">Käufe wiederhergestellt</string>
-    <string name="no_purchases">Keine Kaufhistorie</string>
-    <string name="best_value">Bester Wert</string>
+    <string name="no_purchases">Kein Kaufverlauf</string>
+    <string name="best_value">Bestes Angebot</string>
     <string name="most_popular">Beliebteste</string>
-    <string name="coin_exchange">Coin-Tausch</string>
-    <string name="exchange_rate">Kurs: 1 Diamant = %d Coins</string>
+    <string name="coin_exchange">Münztausch</string>
+    <string name="exchange_rate">Kurs: 1 Diamant = %d Münzen</string>
     <string name="exchange_confirm">Tausch bestätigen</string>
     <string name="exchange_success">Tausch erfolgreich!</string>
+
+    <!-- Profile -->
     <string name="profile_title">Profil</string>
     <string name="edit_profile">Profil bearbeiten</string>
     <string name="my_profile">Mein Profil</string>
     <string name="name">Name</string>
     <string name="age">Alter</string>
     <string name="gender">Geschlecht</string>
-    <string name="bio">Biografie</string>
-    <string name="bio_hint">Erzähl uns von dir...</string>
+    <string name="bio">Über mich</string>
+    <string name="bio_hint">Erzähl uns etwas über dich...</string>
     <string name="location">Standort</string>
     <string name="interests">Interessen</string>
     <string name="add_interest">Interesse hinzufügen</string>
@@ -276,7 +291,7 @@
     <string name="pending_verification">Verifizierung ausstehend</string>
     <string name="verification_rejected">Verifizierung abgelehnt</string>
     <string name="profile_views_count">%d Aufrufe</string>
-    <string name="profile_likes_count">%d Likes</string>
+    <string name="profile_likes_count">%d Gefällt mir</string>
     <string name="profile_matches_count">%d Matches</string>
     <string name="followers">Follower</string>
     <string name="following">Folge ich</string>
@@ -309,22 +324,24 @@
     <string name="badge_popular">Beliebt</string>
     <string name="badge_loyal">Treu</string>
     <string name="badge_top_donor">Top-Spender</string>
-    <string name="badge_influencer">Influencer</string>
+    <string name="badge_influencer">Einflussreiche</string>
+
+    <!-- Settings -->
     <string name="settings_title">Einstellungen</string>
     <string name="settings_account">Konto</string>
     <string name="settings_privacy">Datenschutz</string>
     <string name="settings_notifications">Benachrichtigungen</string>
-    <string name="settings_appearance">Darstellung</string>
+    <string name="settings_appearance">Erscheinungsbild</string>
     <string name="settings_language">Sprache</string>
-    <string name="settings_theme">Thema</string>
+    <string name="settings_theme">Design</string>
     <string name="settings_theme_light">Hell</string>
     <string name="settings_theme_dark">Dunkel</string>
     <string name="settings_theme_system">System</string>
     <string name="settings_blocked_list">Blockierungsliste</string>
     <string name="settings_delete_account">Konto löschen</string>
-    <string name="settings_delete_confirm">Möchten Sie Ihr Konto wirklich löschen? Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="settings_delete_confirm">Möchtest du dein Konto wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
     <string name="settings_logout">Abmelden</string>
-    <string name="settings_logout_confirm">Möchten Sie sich wirklich abmelden?</string>
+    <string name="settings_logout_confirm">Möchtest du dich wirklich abmelden?</string>
     <string name="settings_change_password">Passwort ändern</string>
     <string name="settings_current_password">Aktuelles Passwort</string>
     <string name="settings_new_password">Neues Passwort</string>
@@ -343,9 +360,9 @@
     <string name="settings_email_notifications">E-Mail-Benachrichtigungen</string>
     <string name="settings_sms_notifications">SMS-Benachrichtigungen</string>
     <string name="settings_match_notifications">Match-Benachrichtigungen</string>
-    <string name="settings_message_notifications">Nachrichten-Benachrichtigungen</string>
+    <string name="settings_message_notifications">Nachrichtenbenachrichtigungen</string>
     <string name="settings_live_notifications">Live-Benachrichtigungen</string>
-    <string name="settings_gift_notifications">Geschenk-Benachrichtigungen</string>
+    <string name="settings_gift_notifications">Geschenkbenachrichtigungen</string>
     <string name="settings_newsletter">Newsletter</string>
     <string name="settings_font_size">Schriftgröße</string>
     <string name="settings_font_small">Klein</string>
@@ -361,16 +378,18 @@
     <string name="settings_report_bug">Fehler melden</string>
     <string name="settings_rate_app">App bewerten</string>
     <string name="settings_share_app">App teilen</string>
-    <string name="settings_data_usage">Datennutzung</string>
+    <string name="settings_data_usage">Datenverbrauch</string>
     <string name="settings_wifi_only">Nur WLAN</string>
     <string name="settings_clear_cache">Cache leeren</string>
     <string name="settings_cache_cleared">Cache geleert</string>
-    <string name="settings_auto_play">Autoplay</string>
+    <string name="settings_auto_play">Automatische Wiedergabe</string>
     <string name="settings_sound_effects">Soundeffekte</string>
     <string name="settings_vibration">Vibration</string>
     <string name="settings_dnd">Nicht stören</string>
     <string name="settings_dnd_schedule">Nicht stören Zeitplan</string>
-    <string name="region_title">Regionauswahl</string>
+
+    <!-- Region / Country Selection -->
+    <string name="region_title">Region auswählen</string>
     <string name="region_select">Region auswählen</string>
     <string name="region_current">Aktuelle Region</string>
     <string name="region_change">Region ändern</string>
@@ -425,8 +444,10 @@
     <string name="region_singapore">Singapur</string>
     <string name="region_hong_kong">Hongkong</string>
     <string name="region_taiwan">Taiwan</string>
+
+    <!-- Premium -->
     <string name="premium_title">Premium</string>
-    <string name="premium_subtitle">Upgrade auf HayiDev++ Premium</string>
+    <string name="premium_subtitle">Auf HayiDev++ Premium upgraden</string>
     <string name="premium_monthly">Monatlich</string>
     <string name="premium_yearly">Jährlich</string>
     <string name="premium_lifetime">Lebenslang</string>
@@ -434,24 +455,24 @@
     <string name="premium_per_year">/Jahr</string>
     <string name="premium_save">%%% sparen</string>
     <string name="premium_features">Premium-Funktionen</string>
-    <string name="premium_unlimited_likes">Unbegrenzte Likes</string>
-    <string name="premium_see_who_likes">Wer mag mich sehen</string>
+    <string name="premium_unlimited_likes">Unlimited Likes</string>
+    <string name="premium_see_who_likes">Sieh, wer dich mag</string>
     <string name="premium_super_likes">5 Super Likes/Tag</string>
-    <string name="premium_rewind">Unbegrenzte Rückgängig</string>
+    <string name="premium_rewind">Unlimited Rückgängig</string>
     <string name="premium_boost">1 kostenloser Boost/Monat</string>
-    <string name="premium_no_ads">Werbefreies Erlebnis</string>
+    <string name="premium_no_ads">Werbungsfrei</string>
     <string name="premium_advanced_filters">Erweiterte Filter</string>
-    <string name="premium_unlimited_swipes">Unbegrenztes Swipen</string>
+    <string name="premium_unlimited_swipes">Unlimited Swipes</string>
     <string name="premium_profile_boost">Profil-Boost</string>
     <string name="premium_read_receipts">Lesebestätigungen</string>
     <string name="premium_priority_support">Priority-Support</string>
-    <string name="premium_incognito">Incognito-Modus</string>
-    <string name="premium_travel">Reisemodus</string>
+    <string name="premium_incognito">Inkognito-Modus</string>
+    <string name="premium_travel">Reise-Modus</string>
     <string name="premium_pasaport">Reisepass-Funktion</string>
     <string name="premium_subscribe">Abonnieren</string>
-    <string name="premium_subscribed">Du bist jetzt Premium-Mitglied!</string>
+    <string name="premium_subscribed">Du bist jetzt Premium-Abonnent!</string>
     <string name="premium_cancel">Abonnement kündigen</string>
-    <string name="premium_cancel_confirm">Möchten Sie Ihr Abonnement wirklich kündigen?</string>
+    <string name="premium_cancel_confirm">Möchtest du dein Abonnement wirklich kündigen?</string>
     <string name="premium_restore">Käufe wiederherstellen</string>
     <string name="premium_already_premium">Du bist bereits Premium-Mitglied!</string>
     <string name="premium_payment_failed">Zahlung fehlgeschlagen</string>
@@ -459,29 +480,31 @@
     <string name="premium_terms">Abonnementbedingungen</string>
     <string name="premium_auto_renew">Abonnement verlängert sich automatisch</string>
     <string name="premium_manage">Abonnement verwalten</string>
-    <string name="premium_trial">3-Tage kostenloser Test</string>
-    <string name="premium_trial_desc">3 Tage kostenlos testen, jederzeit kündigen.</string>
-    <string name="premium_trial_start">Kostenlosen Test starten</string>
-    <string name="premium_trial_end">Dein kostenloser Test ist abgelaufen</string>
+    <string name="premium_trial">3 Tage kostenlose Testversion</string>
+    <string name="premium_trial_desc">3 Tage gratis testen, jederzeit kündbar.</string>
+    <string name="premium_trial_start">Kostenlose Testversion starten</string>
+    <string name="premium_trial_end">Deine kostenlose Testversion ist abgelaufen</string>
     <string name="premium_discount">%d%% Rabatt!</string>
     <string name="premium_limited_offer">Zeitlich begrenztes Angebot</string>
-    <string name="premium_offer_expires">Angebot läuft am %s ab</string>
+    <string name="premium_offer_expires">Angebot läuft ab %s</string>
     <string name="premium_upgrade_now">Jetzt upgraden</string>
+
+    <!-- Notifications -->
     <string name="notifications_title">Benachrichtigungen</string>
     <string name="notification_match">%s mag dich!</string>
     <string name="notification_message">Neue Nachricht von %s</string>
     <string name="notification_gift">%s hat dir ein Geschenk gesendet!</string>
     <string name="notification_live">%s hat einen Live-Stream gestartet!</string>
     <string name="notification_follow">%s folgt dir jetzt</string>
-    <string name="notification_like">%s hat dein Foto gemocht</string>
+    <string name="notification_like">%s mag dein Foto</string>
     <string name="notification_comment">%s hat kommentiert</string>
     <string name="notification_mention">%s hat dich erwähnt</string>
-    <string name="notification_achievement">Neue Errungenschaft: %s</string>
+    <string name="notification_achievement">Neuer Erfolg: %s</string>
     <string name="notification_level_up">Aufgestiegen! Level %d</string>
-    <string name="notification_referral">Empfehlung akzeptiert! %s ist beigetreten</string>
+    <string name="notification_referral">Empfehlung angenommen! %s ist beigetreten</string>
     <string name="notification_premium">Erhalte Premium-Vorteile!</string>
     <string name="notification_daily">Löse dein tägliches Geschenk ein!</string>
-    <string name="notification_inactive">%s vermisst dich! Kehre zurück</string>
+    <string name="notification_inactive">%s vermisst dich! Komm zurück</string>
     <string name="notification_new_feature">Neue Funktion: %s</string>
     <string name="notification_update">App aktualisiert</string>
     <string name="notification_maintenance">Wartung geplant</string>
@@ -489,7 +512,9 @@
     <string name="notification_mark_all_read">Alle als gelesen markieren</string>
     <string name="notification_clear_all">Alle löschen</string>
     <string name="notification_settings">Benachrichtigungseinstellungen</string>
-    <string name="achievements_title">Errungenschaften</string>
+
+    <!-- Achievements -->
+    <string name="achievements_title">Erfolge</string>
     <string name="achievement_first_match">Erstes Match</string>
     <string name="achievement_first_match_desc">Mache dein erstes Match</string>
     <string name="achievement_10_matches">Match-Meister</string>
@@ -513,33 +538,33 @@
     <string name="achievement_10_hours_live">Live-Meister</string>
     <string name="achievement_10_hours_live_desc">Streame 10 Stunden</string>
     <string name="achievement_popular">Beliebt</string>
-    <string name="achievement_popular_desc">Erhalte 100 Likes</string>
+    <string name="achievement_popular_desc">Erhalte 100 Gefällt mir</string>
     <string name="achievement_super_popular">Super beliebt</string>
-    <string name="achievement_super_popular_desc">Erhalte 1000 Likes</string>
+    <string name="achievement_super_popular_desc">Erhalte 1000 Gefällt mir</string>
     <string name="achievement_verified">Verifiziert</string>
     <string name="achievement_verified_desc">Verifiziere dein Profil</string>
     <string name="achievement_complete_profile">Profil-Meister</string>
-    <string name="achievement_complete_profile_desc">Schließe dein Profil zu 100%% ab</string>
+    <string name="achievement_complete_profile_desc">Vervollständige dein Profil zu 100%%</string>
     <string name="achievement_referral">Unser Botschafter</string>
     <string name="achievement_referral_desc">Lade 5 Freunde ein</string>
     <string name="achievement_loyal">Treu</string>
-    <string name="achievement_loyal_desc">Logge 30 Tage ein</string>
+    <string name="achievement_loyal_desc">30 Tage lang einloggen</string>
     <string name="achievement_weekly_login">Wöchentliche Anmeldung</string>
-    <string name="achievement_weekly_login_desc">Logge 7 Tage in Folge ein</string>
+    <string name="achievement_weekly_login_desc">7 Tage in Folge einloggen</string>
     <string name="achievement_monthly_login">Monatliche Anmeldung</string>
-    <string name="achievement_monthly_login_desc">Logge 30 Tage in Folge ein</string>
+    <string name="achievement_monthly_login_desc">30 Tage in Folge einloggen</string>
     <string name="achievement_spender">Großzügig</string>
-    <string name="achievement_spender_desc">Gib 1000 Coins aus</string>
-    <string name="achievement_big_spender">Riesiger Ausgeber</string>
-    <string name="achievement_big_spender_desc">Gib 10000 Coins aus</string>
+    <string name="achievement_spender_desc">1000 Münzen ausgeben</string>
+    <string name="achievement_big_spender">Großer Ausgeber</string>
+    <string name="achievement_big_spender_desc">10000 Münzen ausgeben</string>
     <string name="achievement_night_owl">Nachteule</string>
-    <string name="achievement_night_owl_desc">Logge nach Mitternacht ein</string>
-    <string name="achievement_early_bird">Frühaufsteher</string>
-    <string name="achievement_early_bird_desc">Logge vor 6 Uhr morgens ein</string>
+    <string name="achievement_night_owl_desc">Nach Mitternacht einloggen</string>
+    <string name="achievement_early_bird">Früher Vogel</string>
+    <string name="achievement_early_bird_desc">Vor 6 Uhr morgens einloggen</string>
     <string name="achievement_streak_7">7-Tage-Serie</string>
-    <string name="achievement_streak_7_desc">Logge 7 Tage in Folge ein</string>
+    <string name="achievement_streak_7_desc">7 Tage in Folge einloggen</string>
     <string name="achievement_streak_30">30-Tage-Serie</string>
-    <string name="achievement_streak_30_desc">Logge 30 Tage in Folge ein</string>
+    <string name="achievement_streak_30_desc">30 Tage in Folge einloggen</string>
     <string name="achievement_progress">Fortschritt: %d/%d</string>
     <string name="achievement_claim_reward">Belohnung einlösen</string>
     <string name="achievement_reward_claimed">Belohnung eingelöst!</string>
@@ -547,25 +572,29 @@
     <string name="achievement_unlocked">Freigeschaltet!</string>
     <string name="achievement_points">%d Punkte</string>
     <string name="achievement_total_points">Gesamtpunkte: %d</string>
-    <string name="leaderboard_title">Bestenliste</string>
+
+    <!-- Leaderboard -->
+    <string name="leaderboard_title">Rangliste</string>
     <string name="leaderboard_weekly">Wöchentlich</string>
     <string name="leaderboard_monthly">Monatlich</string>
-    <string name="leaderboard_all_time">Alle Zeiten</string>
-    <string name="leaderboard_gifts">Geschenk-Bestenliste</string>
-    <string name="leaderboard_likes">Like-Bestenliste</string>
-    <string name="leaderboard_popular">Beliebtheits-Bestenliste</string>
-    <string name="leaderboard_rank">%d.</string>
+    <string name="leaderboard_all_time">Alle Zeit</string>
+    <string name="leaderboard_gifts">Geschenk-Rangliste</string>
+    <string name="leaderboard_likes">Gefällt-mir-Rangliste</string>
+    <string name="leaderboard_popular">Beliebtheits-Rangliste</string>
+    <string name="leaderboard_rank">#%d</string>
     <string name="leaderboard_you">Du</string>
-    <string name="leaderboard_no_rank">Du bist nicht in der Liste</string>
+    <string name="leaderboard_no_rank">Du bist nicht rangiert</string>
     <string name="leaderboard_earn_points">Punkte verdienen</string>
-    <string name="leaderboard_points_info">Verdiene Punkte durch Geschenke, Likes und Aktivität</string>
+    <string name="leaderboard_points_info">Verdiene Punkte durch Geschenke, Gefällt mir und Aktivität</string>
     <string name="leaderboard_prize">Preis: %s</string>
     <string name="leaderboard_winner">Gewinner: %s</string>
     <string name="leaderboard_congratulations">Herzlichen Glückwunsch!</string>
-    <string name="leaderboard_you_ranked">Du bist auf Platz %d!</string>
+    <string name="leaderboard_you_ranked">Du bist auf Platz #%d!</string>
     <string name="leaderboard_top_10">Komm in die Top 10</string>
     <string name="leaderboard_top_50">Komm in die Top 50</string>
     <string name="leaderboard_top_100">Komm in die Top 100</string>
+
+    <!-- Referral System -->
     <string name="referral_title">Empfehlungssystem</string>
     <string name="referral_code">Dein Empfehlungscode</string>
     <string name="referral_share">Empfehlungscode teilen</string>
@@ -576,21 +605,23 @@
     <string name="referral_already_used">Dieser Empfehlungscode wurde bereits verwendet</string>
     <string name="referral_invalid">Ungültiger Empfehlungscode</string>
     <string name="referral_own_code">Du kannst deinen eigenen Code nicht verwenden</string>
-    <string name="referral_reward">Empfehlungsbelohnung: %d Coins</string>
-    <string name="referral_friend_reward">Freundsbelohnung: %d Coins</string>
+    <string name="referral_reward">Empfehlungsbelohnung: %d Münzen</string>
+    <string name="referral_friend_reward">Freundsbelohnung: %d Münzen</string>
     <string name="referral_invited">Eingeladen: %d</string>
-    <string name="referral_earned">Verdient: %d Coins</string>
+    <string name="referral_earned">Verdient: %d Münzen</string>
     <string name="referral_how_it_works">So funktioniert es</string>
     <string name="referral_step_1">1. Teile deinen Empfehlungscode</string>
     <string name="referral_step_2">2. Dein Freund lädt die App herunter</string>
     <string name="referral_step_3">3. Dein Freund registriert sich</string>
-    <string name="referral_step_4">4. Beide erhalten eine Belohnung!</string>
+    <string name="referral_step_4">4. Beide erhalten Belohnungen!</string>
     <string name="referral_max_invites">Maximale Einladungen: %d</string>
     <string name="referral_remaining">Verbleibende Einladungen: %d</string>
     <string name="referral_history">Empfehlungsverlauf</string>
     <string name="referral_no_history">Noch kein Empfehlungsverlauf</string>
-    <string name="sticker_store">Sticker-Shop</string>
-    <string name="sticker_pack">Sticker-Packung</string>
+
+    <!-- Sticker Store -->
+    <string name="sticker_store">Aufkleber-Shop</string>
+    <string name="sticker_pack">Aufkleber-Paket</string>
     <string name="sticker_free">Kostenlos</string>
     <string name="sticker_premium">Premium</string>
     <string name="sticker_buy">Kaufen</string>
@@ -598,12 +629,12 @@
     <string name="sticker_download">Herunterladen</string>
     <string name="sticker_downloading">Wird heruntergeladen...</string>
     <string name="sticker_downloaded">Heruntergeladen</string>
-    <string name="sticker_delete">Sticker löschen</string>
+    <string name="sticker_delete">Aufkleber löschen</string>
     <string name="sticker_preview">Vorschau</string>
-    <string name="sticker_share">Sticker teilen</string>
+    <string name="sticker_share">Aufkleber teilen</string>
     <string name="sticker_category_love">Liebe</string>
     <string name="sticker_category_funny">Lustig</string>
-    <string name="sticker_category_cute">Niedlich</string>
+    <string name="sticker_category_cute">Süß</string>
     <string name="sticker_category_cool">Cool</string>
     <string name="sticker_category_sad">Traurig</string>
     <string name="sticker_category_angry">Wütend</string>
@@ -618,17 +649,19 @@
     <string name="sticker_new">Neu</string>
     <string name="sticker_trending">Im Trend</string>
     <string name="sticker_my_collection">Meine Sammlung</string>
-    <string name="sticker_no_stickers">Noch keine Sticker</string>
+    <string name="sticker_no_stickers">Noch keine Aufkleber</string>
     <string name="sticker_use">Verwenden</string>
     <string name="sticker_recent">Kürzlich verwendet</string>
     <string name="sticker_frequently">Häufig verwendet</string>
+
+    <!-- Story -->
     <string name="story_title">Stories</string>
     <string name="story_add">Story hinzufügen</string>
     <string name="story_camera">Kamera</string>
     <string name="story_gallery">Galerie</string>
     <string name="story_text">Text</string>
     <string name="story_music">Musik hinzufügen</string>
-    <string name="story_sticker">Sticker hinzufügen</string>
+    <string name="story_sticker">Aufkleber hinzufügen</string>
     <string name="story_emoji">Emoji hinzufügen</string>
     <string name="story_post">Teilen</string>
     <string name="story_posting">Wird geteilt...</string>
@@ -642,14 +675,14 @@
     <string name="story_screenshot">Screenshot</string>
     <string name="story_screenshot_alert">%s hat einen Screenshot gemacht!</string>
     <string name="story_delete">Story löschen</string>
-    <string name="story_delete_confirm">Möchten Sie diese Story wirklich löschen?</string>
+    <string name="story_delete_confirm">Möchtest du diese Story wirklich löschen?</string>
     <string name="story_expired">Story abgelaufen</string>
     <string name="story_24_hours">Verschwindet nach 24 Stunden</string>
-    <string name="story_highlight">Highlight-Story</string>
+    <string name="story_highlight">Story hervorheben</string>
     <string name="story_highlights">Story-Highlights</string>
     <string name="story_add_highlight">Zu Highlights hinzufügen</string>
     <string name="story_new_update">Neue Story: %s</string>
-    <string name="story_restricted">Du kannst die Stories dieses Benutzers nicht sehen</string>
+    <string name="story_restricted">Du kannst die Stories dieses Benutzers nicht ansehen</string>
     <string name="story_save">Story speichern</string>
     <string name="story_saved">Story gespeichert</string>
     <string name="story_draw">Zeichnen</string>
@@ -661,18 +694,20 @@
     <string name="story_boomerang">Boomerang</string>
     <string name="story_slow_motion">Zeitlupe</string>
     <string name="story_filter">Filter</string>
+
+    <!-- Privacy & Security -->
     <string name="privacy_title">Datenschutz &amp; Sicherheit</string>
     <string name="privacy_block_list">Blockierte Benutzer</string>
     <string name="privacy_blocked_count">%d Benutzer blockiert</string>
     <string name="privacy_report_user">Benutzer melden</string>
-    <string name="privacy_report_reason">Meldegrund</string>
+    <string name="privacy_report_reason">Meldgrund</string>
     <string name="privacy_report_spam">Spam</string>
     <string name="privacy_report_inappropriate">Unangemessener Inhalt</string>
     <string name="privacy_report_fake">Gefälschtes Profil</string>
     <string name="privacy_report_harassment">Belästigung</string>
     <string name="privacy_report_underage">Minderjähriger Benutzer</string>
     <string name="privacy_report_other">Sonstiges</string>
-    <string name="privacy_report_details">Melde-Details</string>
+    <string name="privacy_report_details">Melddetails</string>
     <string name="privacy_report_submit">Meldung absenden</string>
     <string name="privacy_report_success">Deine Meldung wurde erhalten. Vielen Dank.</string>
     <string name="privacy_report_already">Du hast diesen Benutzer bereits gemeldet</string>
@@ -681,7 +716,7 @@
     <string name="privacy_data_request">Datenanfrage gesendet</string>
     <string name="privacy_data_ready">Deine Daten sind bereit! Per E-Mail gesendet.</string>
     <string name="privacy_delete_data">Deine Daten löschen</string>
-    <string name="privacy_delete_data_confirm">Möchten Sie wirklich all Ihre Daten löschen?</string>
+    <string name="privacy_delete_data_confirm">Möchtest du wirklich all deine Daten löschen?</string>
     <string name="privacy_activity_status">Aktivitätsstatus</string>
     <string name="privacy_show_online">Online-Status anzeigen</string>
     <string name="privacy_show_reading">Lese-Status anzeigen</string>
@@ -691,20 +726,22 @@
     <string name="privacy_location_visible">Standort anzeigen</string>
     <string name="privacy_age_visible">Alter anzeigen</string>
     <string name="privacy_distance_visible">Entfernung anzeigen</string>
-    <string name="privacy_incognito_mode">Incognito-Modus</string>
+    <string name="privacy_incognito_mode">Inkognito-Modus</string>
     <string name="privacy_incognito_desc">Dein Profil wird diskret angezeigt</string>
     <string name="privacy_safe_mode">Sicherheitsmodus</string>
     <string name="privacy_safe_desc">Unangemessener Inhalt wird gefiltert</string>
     <string name="privacy_two_factor">Zwei-Faktor-Authentifizierung</string>
     <string name="privacy_two_factor_desc">Zusätzlichen Schutz für dein Konto hinzufügen</string>
-    <string name="privacy_login_alerts">Anmelde-Alarme</string>
-    <string name="privacy_login_alerts_desc">Alarme für Anmeldungen von neuen Geräten erhalten</string>
+    <string name="privacy_login_alerts">Anmeldehinweise</string>
+    <string name="privacy_login_alerts_desc">Hinweise für neue Geräteanmeldungen erhalten</string>
     <string name="privacy_blocked_manage">Blockierte Benutzer verwalten</string>
-    <string name="error_generic">Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</string>
-    <string name="error_network">Netzwerkfehler. Überprüfen Sie Ihre Internetverbindung.</string>
-    <string name="error_server">Serverfehler. Bitte versuchen Sie es später erneut.</string>
-    <string name="error_auth">Authentifizierungsfehler. Bitte melden Sie sich erneut an.</string>
-    <string name="error_token_expired">Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.</string>
+
+    <!-- Error Messages -->
+    <string name="error_generic">Ein Fehler ist aufgetreten. Bitte versuche es erneut.</string>
+    <string name="error_network">Netzwerkfehler. Überprüfe deine Internetverbindung.</string>
+    <string name="error_server">Serverfehler. Bitte versuche es später erneut.</string>
+    <string name="error_auth">Authentifizierungsfehler. Bitte melde dich erneut an.</string>
+    <string name="error_token_expired">Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.</string>
     <string name="error_permission">Berechtigung erforderlich</string>
     <string name="error_camera">Kameraberechtigung erforderlich</string>
     <string name="error_microphone">Mikrofonberechtigung erforderlich</string>
@@ -719,9 +756,9 @@
     <string name="error_phone_used">Diese Telefonnummer wird bereits verwendet</string>
     <string name="error_email_used">Diese E-Mail wird bereits verwendet</string>
     <string name="error_username_taken">Dieser Benutzername ist bereits vergeben</string>
-    <string name="error_username_invalid">Ungültiger Benutzername. Nur Buchstaben, Zahlen und Unterstriche.</string>
-    <string name="error_bio_too_long">Biografie zu lang. Maximal %d Zeichen.</string>
-    <string name="error_photo_required">Mindestens ein Foto erforderlich</string>
+    <string name="error_username_invalid">Ungültiger Benutzername. Verwende nur Buchstaben, Zahlen und Unterstriche.</string>
+    <string name="error_bio_too_long">Bio ist zu lang. Maximal %d Zeichen.</string>
+    <string name="error_photo_required">Mindestens ein Foto ist erforderlich</string>
     <string name="error_age_required">Alter ist erforderlich</string>
     <string name="error_age_minimum">Mindestalter: %d</string>
     <string name="error_gender_required">Geschlechtsauswahl ist erforderlich</string>
@@ -730,26 +767,28 @@
     <string name="error_no_internet">Keine Internetverbindung</string>
     <string name="error_slow_connection">Langsame Internetverbindung</string>
     <string name="error_timeout">Zeitüberschreitung</string>
-    <string name="error_maintenance">App ist in Wartung. Bitte versuchen Sie es später erneut.</string>
-    <string name="error_version_old">Ihre App ist veraltet. Bitte aktualisieren.</string>
+    <string name="error_maintenance">App befindet sich in Wartung. Bitte versuche es später erneut.</string>
+    <string name="error_version_old">Deine App ist veraltet. Bitte aktualisiere sie.</string>
     <string name="error_not_available">Diese Funktion ist derzeit nicht verfügbar</string>
-    <string name="error_region">Diese Funktion ist in Ihrer Region nicht verfügbar</string>
+    <string name="error_region">Diese Funktion ist in deiner Region nicht verfügbar</string>
     <string name="error_age_restricted">Dieser Inhalt ist altersbeschränkt</string>
     <string name="error_content_removed">Inhalt entfernt</string>
-    <string name="error_account_disabled">Ihr Konto wurde deaktiviert</string>
-    <string name="error_account_reported">Ihr Konto wurde gemeldet</string>
-    <string name="error_suspended">Ihr Konto wurde gesperrt</string>
+    <string name="error_account_disabled">Dein Konto wurde deaktiviert</string>
+    <string name="error_account_reported">Dein Konto wurde gemeldet</string>
+    <string name="error_suspended">Dein Konto wurde gesperrt</string>
     <string name="error_blocked">Du wurdest von diesem Benutzer blockiert</string>
-    <string name="error_rate_limit">Zu viele Anfragen. Bitte warten.</string>
-    <string name="error_payment">Zahlungsfehler. Bitte versuchen Sie es erneut.</string>
-    <string name="error_subscription">Abonnementsfehler</string>
-    <string name="error_referral_limit">Du hast dein Einladungslimit erreicht</string>
+    <string name="error_rate_limit">Zu viele Anfragen. Bitte warte.</string>
+    <string name="error_payment">Zahlungsfehler. Bitte versuche es erneut.</string>
+    <string name="error_subscription">Abonnementfehler</string>
+    <string name="error_referral_limit">Du hast dein Empfehlungslimit erreicht</string>
     <string name="error_gift_limit">Du hast dein Geschenkelimit erreicht</string>
-    <string name="error_coins_insufficient">Unzureichendes Coin-Guthaben</string>
-    <string name="error_diamonds_insufficient">Unzureichendes Diamant-Guthaben</string>
+    <string name="error_coins_insufficient">Unzureichendes Münzguthaben</string>
+    <string name="error_diamonds_insufficient">Unzureichendes Diamantenguthaben</string>
     <string name="error_already_reported">Du hast diesen Inhalt bereits gemeldet</string>
     <string name="error_self_block">Du kannst dich nicht selbst blockieren</string>
     <string name="error_self_report">Du kannst dich nicht selbst melden</string>
+
+    <!-- Common Buttons & Labels -->
     <string name="button_ok">OK</string>
     <string name="button_cancel">Abbrechen</string>
     <string name="button_save">Speichern</string>
@@ -783,7 +822,7 @@
     <string name="label_empty">Leer</string>
     <string name="label_offline">Offline</string>
     <string name="label_connecting">Verbinden...</string>
-    <string name="label_reconnecting">Neu verbinden...</string>
+    <string name="label_reconnecting">Erneut verbinden...</string>
     <string name="label_required">*Erforderlich</string>
     <string name="label_optional">Optional</string>
     <string name="label_new">Neu</string>
@@ -805,13 +844,15 @@
     <string name="label_female">Weiblich</string>
     <string name="label_other">Andere</string>
     <string name="label_unknown">Unbekannt</string>
+
+    <!-- Time & Date -->
     <string name="time_just_now">Gerade eben</string>
-    <string name="time_minutes_ago">vor %d Minuten</string>
-    <string name="time_hours_ago">vor %d Stunden</string>
-    <string name="time_days_ago">vor %d Tagen</string>
-    <string name="time_weeks_ago">vor %d Wochen</string>
-    <string name="time_months_ago">vor %d Monaten</string>
-    <string name="time_years_ago">vor %d Jahren</string>
+    <string name="time_minutes_ago">Vor %d Minuten</string>
+    <string name="time_hours_ago">Vor %d Stunden</string>
+    <string name="time_days_ago">Vor %d Tagen</string>
+    <string name="time_weeks_ago">Vor %d Wochen</string>
+    <string name="time_months_ago">Vor %d Monaten</string>
+    <string name="time_years_ago">Vor %d Jahren</string>
     <string name="time_today">Heute</string>
     <string name="time_yesterday">Gestern</string>
     <string name="time_this_week">Diese Woche</string>
@@ -819,6 +860,8 @@
     <string name="date_format">dd.MM.yyyy</string>
     <string name="time_format">HH:mm</string>
     <string name="datetime_format">dd.MM.yyyy HH:mm</string>
+
+    <!-- Plurals -->
     <plurals name="follower_count">
         <item quantity="one">%d Follower</item>
         <item quantity="other">%d Follower</item>
@@ -828,8 +871,8 @@
         <item quantity="other">%d folge ich</item>
     </plurals>
     <plurals name="like_count">
-        <item quantity="one">%d Like</item>
-        <item quantity="other">%d Likes</item>
+        <item quantity="one">%d Gefällt mir</item>
+        <item quantity="other">%d Gefällt mir</item>
     </plurals>
     <plurals name="match_count">
         <item quantity="one">%d Match</item>
@@ -848,8 +891,8 @@
         <item quantity="other">%d Geschenke</item>
     </plurals>
     <plurals name="coin_count">
-        <item quantity="one">%d Coin</item>
-        <item quantity="other">%d Coins</item>
+        <item quantity="one">%d Münze</item>
+        <item quantity="other">%d Münzen</item>
     </plurals>
     <plurals name="diamond_count">
         <item quantity="one">%d Diamant</item>
@@ -880,12 +923,12 @@
         <item quantity="other">%d Freunde eingeladen</item>
     </plurals>
     <plurals name="achievement_count">
-        <item quantity="one">%d Errungenschaft</item>
-        <item quantity="other">%d Errungenschaften</item>
+        <item quantity="one">%d Erfolg</item>
+        <item quantity="other">%d Erfolge</item>
     </plurals>
     <plurals name="sticker_count">
-        <item quantity="one">%d Sticker</item>
-        <item quantity="other">%d Sticker</item>
+        <item quantity="one">%d Aufkleber</item>
+        <item quantity="other">%d Aufkleber</item>
     </plurals>
     <plurals name="report_count">
         <item quantity="one">%d Meldung</item>

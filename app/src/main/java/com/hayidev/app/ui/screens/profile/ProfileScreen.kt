@@ -28,7 +28,21 @@ import com.hayidev.app.ui.theme.*
 @Composable
 fun ProfileScreen(
     onSettingsClick: () -> Unit,
-    onGiftStoreClick: () -> Unit
+    onGiftStoreClick: () -> Unit,
+    onEditProfileClick: () -> Unit = {},
+    onPremiumClick: () -> Unit = {},
+    onAchievementsClick: () -> Unit = {},
+    onLeaderboardClick: () -> Unit = {},
+    onReferralClick: () -> Unit = {},
+    onVerificationClick: () -> Unit = {},
+    onStickerStoreClick: () -> Unit = {},
+    onThemeStoreClick: () -> Unit = {},
+    onLanguageClick: () -> Unit = {},
+    onPrivacyClick: () -> Unit = {},
+    onHelpClick: () -> Unit = {},
+    onAboutClick: () -> Unit = {},
+    onFeedbackClick: () -> Unit = {},
+    onBlockedUsersClick: () -> Unit = {}
 ) {
     val scrollState = rememberScrollState()
 
@@ -319,13 +333,69 @@ fun ProfileScreen(
 
                 // Edit Profile Button
                 OutlinedButton(
-                    onClick = { },
+                    onClick = onEditProfileClick,
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(12.dp)
                 ) {
                     Icon(Icons.Filled.Edit, contentDescription = null)
                     Spacer(modifier = Modifier.width(8.dp))
                     Text("Profili Düzenle")
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Profile Menu Items
+                val menuItems = listOf(
+                    Triple("Premium", Icons.Filled.WorkspacePremium, onPremiumClick),
+                    Triple("Rozetler & Başarılar", Icons.Filled.EmojiEvents, onAchievementsClick),
+                    Triple("Liderlik Tablosu", Icons.Filled.Leaderboard, onLeaderboardClick),
+                    Triple("Arkadaş Davet Et", Icons.Filled.CardGiftcard, onReferralClick),
+                    Triple("Doğrulama", Icons.Filled.Verified, onVerificationClick),
+                    Triple("Sticker Mağazası", Icons.Filled.Store, onStickerStoreClick),
+                    Triple("Tema Mağazası", Icons.Filled.Palette, onThemeStoreClick),
+                    Triple("Dil Seçimi", Icons.Filled.Language, onLanguageClick),
+                    Triple("Gizlilik Ayarları", Icons.Filled.Lock, onPrivacyClick),
+                    Triple("Engellenen Kullanıcılar", Icons.Filled.Block, onBlockedUsersClick),
+                    Triple("Yardım & SSS", Icons.Filled.Help, onHelpClick),
+                    Triple("Geri Bildirim", Icons.Filled.Feedback, onFeedbackClick),
+                    Triple("Uygulama Hakkında", Icons.Filled.Info, onAboutClick)
+                )
+
+                menuItems.forEach { (title, icon, onClick) ->
+                    Card(
+                        onClick = onClick,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 4.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surface
+                        ),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                icon,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Spacer(modifier = Modifier.width(16.dp))
+                            Text(
+                                text = title,
+                                modifier = Modifier.weight(1f),
+                                fontSize = 14.sp
+                            )
+                            Icon(
+                                Icons.Filled.ChevronRight,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)
+                            )
+                        }
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(32.dp))

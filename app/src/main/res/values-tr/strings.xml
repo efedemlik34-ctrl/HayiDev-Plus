@@ -38,7 +38,7 @@
     <string name="or_continue_with">veya şununla devam et</string>
     <string name="already_have_account">Zaten hesabınız var mı?</string>
     <string name="dont_have_account">Hesabınız yok mu?</string>
-    <string name="agree_terms">Giriş yaparak <u>Kullanım Şartları</u> ve <u>Gizlilik Politikası</u>&#39;nı kabul etmiş olursunuz.</string>
+    <string name="agree_terms">Giriş yaparak &lt;U&gt;Kullanım Şartları&lt;/U&gt; ve &lt;U&gt;Gizlilik Politikası&lt;/U&gt;'nı kabul etmiş olursunuz.</string>
     <string name="verify_email">E-posta Doğrula</string>
     <string name="verify_email_desc">E-posta adresinize doğrulama bağlantısı gönderdik.</string>
     <string name="resend_code">Kodu Tekrar Gönder</string>
@@ -57,7 +57,7 @@
     <string name="swipe_up">Süper Beğen</string>
     <string name="super_like">Süper Beğeni</string>
     <string name="its_a_match">Eşleştiniz!</string>
-    <string name="match_desc">Siz de %s&#39;i beğendiniz!</string>
+    <string name="match_desc">Siz de %s'i beğendiniz!</string>
     <string name="send_message">Mesaj Gönder</string>
     <string name="keep_swiping">Kaydırmaya Devam Et</string>
     <string name="no_more_profiles">Daha fazla profil yok</string>
@@ -235,7 +235,7 @@
     <string name="gift_price">%d coins</string>
     <string name="gift_insufficient_coins">Yetersiz coins</string>
     <string name="gift_sent_success">Hediye başarıyla gönderildi!</string>
-    <string name="gift_received_from">%s&#39;den hediye aldınız</string>
+    <string name="gift_received_from">%s'den hediye aldınız</string>
     <string name="gift_claim">Hediyeyi Al</string>
     <string name="gift_claimed">Hediye alındı!</string>
     <string name="daily_gift">Günlük Hediye</string>
@@ -261,7 +261,7 @@
     <string name="diamond_package_5">10000 Diamonds</string>
     <string name="purchase_success">Satın alma başarılı!</string>
     <string name="purchase_failed">Satın alma başarısız</string>
-    <string name="purchase_restored">Satın almalار geri yüklendi</string>
+    <string name="purchase_restored">Satın almalara geri yüklendi</string>
     <string name="no_purchases">Satın alma geçmişi yok</string>
     <string name="best_value">En İyi Değer</string>
     <string name="most_popular">En Popüler</string>
@@ -447,7 +447,7 @@
 
     <!-- Premium -->
     <string name="premium_title">Premium</string>
-    <string name="premium_subtitle">HayiDev++ Premium&#39;a yükseltin</string>
+    <string name="premium_subtitle">HayiDev++ Premium'a yükseltin</string>
     <string name="premium_monthly">Aylık</string>
     <string name="premium_yearly">Yıllık</string>
     <string name="premium_lifetime">Ömür Boyu</string>
@@ -470,7 +470,7 @@
     <string name="premium_travel">Seyahat Modu</string>
     <string name="premium_pasaport">Pasaport Özelliği</string>
     <string name="premium_subscribe">Abone Ol</string>
-    <string name="premium_subscribed">Premium&#39a abone oldunuz!</string>
+    <string name="premium_subscribed">Premium'a abone oldunuz!</string>
     <string name="premium_cancel">Aboneliği İptal Et</string>
     <string name="premium_cancel_confirm">Aboneliğinizi iptal etmek istediğinize emin misiniz?</string>
     <string name="premium_restore">Satın Almaları Geri Yükle</string>
@@ -486,7 +486,7 @@
     <string name="premium_trial_end">Deneme süreniz sona erdi</string>
     <string name="premium_discount">%d%% İndirim!</string>
     <string name="premium_limited_offer">Sınırlı Teklif</string>
-    <string name="premium_offer_expires">Teklif %s&#39;de sona eriyor</string>
+    <string name="premium_offer_expires">Teklif %s'de sona eriyor</string>
     <string name="premium_upgrade_now">Şimdi Yükselt</string>
 
     <!-- Notifications -->
@@ -560,7 +560,7 @@
     <string name="achievement_night_owl">Gece Kuşu</string>
     <string name="achievement_night_owl_desc">Gece yarısı sonra giriş yapın</string>
     <string name="achievement_early_bird">Erken Kuş</string>
-    <string name="achievement_early_bird_desc">Sabah 6&#39;dan önce giriş yapın</string>
+    <string name="achievement_early_bird_desc">Sabah 6'dan önce giriş yapın</string>
     <string name="achievement_streak_7">7 Günlük Seri</string>
     <string name="achievement_streak_7_desc">7 gün üst üste giriş yapın</string>
     <string name="achievement_streak_30">30 Günlük Seri</string>
@@ -590,9 +590,9 @@
     <string name="leaderboard_winner">Kazanan: %s</string>
     <string name="leaderboard_congratulations">Tebrikler!</string>
     <string name="leaderboard_you_ranked">%d. sıradasınız!</string>
-    <string name="leaderboard_top_10">İlk 10&#39a Girin</string>
-    <string name="leaderboard_top_50">İlk 50&#39ye Girin</string>
-    <string name="leaderboard_top_100">İlk 100&#39e Girin</string>
+    <string name="leaderboard_top_10">İlk 10'a Girin</string>
+    <string name="leaderboard_top_50">İlk 50'ye Girin</string>
+    <string name="leaderboard_top_100">İlk 100'e Girin</string>
 
     <!-- Referral System -->
     <string name="referral_title">Davet Sistemi</string>
@@ -695,7 +695,7 @@
     <string name="story_slow_motion">Yavaş Çekim</string>
     <string name="story_filter">Filtre</string>
 
-    <!-- Privacy & Security -->
+    <!-- Privacy &amp; Security -->
     <string name="privacy_title">Gizlilik ve Güvenlik</string>
     <string name="privacy_block_list">Engellenen Kullanıcılar</string>
     <string name="privacy_blocked_count">%d kullanıcı engellendi</string>
@@ -857,81 +857,63 @@
     <string name="time_yesterday">Dün</string>
     <string name="time_this_week">Bu Hafta</string>
     <string name="time_this_month">Bu Ay</string>
-    <string name="date_format">dd.MM.yyyy</string>
+    <string name="date_format">dd/MM/yyyy</string>
     <string name="time_format">HH:mm</string>
-    <string name="datetime_format">dd.MM.yyyy HH:mm</string>
+    <string name="datetime_format">dd/MM/yyyy HH:mm</string>
 
     <!-- Plurals -->
     <plurals name="follower_count">
-        <item quantity="one">%d takipçi</item>
-        <item quantity="other">%d takipçi</item>
+        <item quantity="other">%d követő</item>
     </plurals>
     <plurals name="following_count">
-        <item quantity="one">%d takip edilen</item>
-        <item quantity="other">%d takip edilen</item>
+        <item quantity="other">%d követés</item>
     </plurals>
     <plurals name="like_count">
-        <item quantity="one">%d beğeni</item>
-        <item quantity="other">%d beğeni</item>
+        <item quantity="other">%d kedvelés</item>
     </plurals>
     <plurals name="match_count">
-        <item quantity="one">%d eşleşme</item>
-        <item quantity="other">%d eşleşme</item>
+        <item quantity="other">%d találat</item>
     </plurals>
     <plurals name="message_count">
-        <item quantity="one">%d mesaj</item>
-        <item quantity="other">%d mesaj</item>
+        <item quantity="other">%d üzenet</item>
     </plurals>
     <plurals name="viewer_count">
-        <item quantity="one">%d izleyici</item>
-        <item quantity="other">%d izleyici</item>
+        <item quantity="other">%d néző</item>
     </plurals>
     <plurals name="gift_count">
-        <item quantity="one">%d hediye</item>
-        <item quantity="other">%d hediye</item>
+        <item quantity="other">%d ajándék</item>
     </plurals>
     <plurals name="coin_count">
-        <item quantity="one">%d coin</item>
-        <item quantity="other">%d coin</item>
+        <item quantity="other">%d érme</item>
     </plurals>
     <plurals name="diamond_count">
-        <item quantity="one">%d diamond</item>
-        <item quantity="other">%d diamond</item>
+        <item quantity="other">%d gyémánt</item>
     </plurals>
     <plurals name="photo_count">
-        <item quantity="one">%d fotoğraf</item>
-        <item quantity="other">%d fotoğraf</item>
+        <item quantity="other">%d fotó</item>
     </plurals>
     <plurals name="point_count">
-        <item quantity="one">%d puan</item>
-        <item quantity="other">%d puan</item>
+        <item quantity="other">%d pont</item>
     </plurals>
     <plurals name="day_count">
-        <item quantity="one">%d gün</item>
-        <item quantity="other">%d gün</item>
+        <item quantity="other">%d nap</item>
     </plurals>
     <plurals name="hour_count">
-        <item quantity="one">%d saat</item>
-        <item quantity="other">%d saat</item>
+        <item quantity="other">%d óra</item>
     </plurals>
     <plurals name="minute_count">
-        <item quantity="one">%d dakika</item>
-        <item quantity="other">%d dakika</item>
+        <item quantity="other">%d perc</item>
     </plurals>
     <plurals name="referral_count">
-        <item quantity="one">%d arkadaş davet edildi</item>
-        <item quantity="other">%d arkadaş davet edildi</item>
+        <item quantity="other">%d meghívott barát</item>
     </plurals>
     <plurals name="achievement_count">
-        <item quantity="one">%d başarı</item>
-        <item quantity="other">%d başarı</item>
+        <item quantity="other">%d teljesítmény</item>
     </plurals>
     <plurals name="sticker_count">
-        <item quantity="one">%d çıkartma</item>
-        <item quantity="other">%d çıkartma</item>
+        <item quantity="other">%d matrica</item>
     </plurals>
     <plurals name="report_count">
-        <item quantity="one">%d şikayet</item>
-        <item quantity="other">%d şikayet</item>
+        <item quantity="other">%d jelentés</item>
     </plurals>
 </resources>
