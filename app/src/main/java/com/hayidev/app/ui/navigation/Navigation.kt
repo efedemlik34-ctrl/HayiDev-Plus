@@ -22,6 +22,7 @@ import com.hayidev.app.ui.screens.discover.DiscoverScreen
 import com.hayidev.app.ui.screens.gift.GiftStoreScreen
 import com.hayidev.app.ui.screens.live.CreateLiveRoomScreen
 import com.hayidev.app.ui.screens.live.LiveRoomScreen
+import com.hayidev.app.ui.screens.live.LiveScreen
 import com.hayidev.app.ui.screens.login.LoginScreen
 import com.hayidev.app.ui.screens.profile.OtherProfileScreen
 import com.hayidev.app.ui.screens.profile.ProfileScreen
@@ -41,18 +42,32 @@ import com.hayidev.app.ui.screens.game.LuckyBoxScreen
 import com.hayidev.app.ui.screens.game.MiniGolfScreen
 import com.hayidev.app.ui.screens.game.QuizGameScreen
 import com.hayidev.app.ui.screens.game.MemoryGameScreen
+import com.hayidev.app.ui.screens.onboarding.OnboardingScreen
+import com.hayidev.app.ui.screens.splash.SplashScreen
+import com.hayidev.app.ui.screens.premium.PremiumScreen
+import com.hayidev.app.ui.screens.wallet.WalletScreen
+import com.hayidev.app.ui.screens.notification.NotificationScreen
+import com.hayidev.app.ui.screens.search.SearchScreen
+import android.net.Uri
 
 sealed class Screen(val route: String) {
+    data object Splash : Screen("splash")
+    data object Onboarding : Screen("onboarding")
     data object Login : Screen("login")
+    data object RegionSelection : Screen("region_selection")
     data object Discover : Screen("discover")
     data object ChatList : Screen("chat_list")
     data object Live : Screen("live")
     data object Profile : Screen("profile")
     data object Settings : Screen("settings")
     data object GiftStore : Screen("gift_store")
-    data object CreateLiveRoom : Screen("create_live_room")
-    data object RegionSelection : Screen("region_selection")
+    data object Premium : Screen("premium")
+    data object Wallet : Screen("wallet")
+    data object Notification : Screen("notification")
+    data object Search : Screen("search")
     data object GamesHub : Screen("games_hub")
+    data object CreateLiveRoom : Screen("create_live_room")
+    
     data object LuckyGame : Screen("lucky_game/{roomId}") {
         fun createRoute(roomId: String) = "lucky_game/$roomId"
     }
@@ -104,10 +119,32 @@ val bottomNavItems = listOf(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HayiDevNavHost() {
+fun HayiDevNavHost(
+    initialDeepLink: Uri? = null
+) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
+
+    LaunchedEffect(initialDeepLink) {
+        initialDeepLink?.let { uri ->
+            val path = uri.pathSegments.firstOrNull()
+            when (path) {
+                "chat" -> {
+                    val roomId = uri.lastPathSegment
+                    roomId?.let { navController.navigate(Screen.Chat.createRoute(it)) }
+                }
+                "live" -> {
+                    val roomId = uri.lastPathSegment
+                    roomId?.let { navController.navigate(Screen.LiveRoom.createRoute(it)) }
+                }
+                "profile" -> {
+                    val userId = uri.lastPathSegment
+                    userId?.let { navController.navigate(Screen.OtherProfile.createRoute(it)) }
+                }
+            }
+        }
+    }
 
     val showBottomBar = currentDestination?.hierarchy?.any { dest ->
         bottomNavItems.any { it.screen.route == dest.route }
@@ -156,18 +193,55 @@ fun HayiDevNavHost() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screen.Discover.route,
+            startDestination = Screen.Splash.route,
             modifier = Modifier.padding(innerPadding),
             enterTransition = { fadeIn(animationSpec = tween(300)) },
             exitTransition = { fadeOut(animationSpec = tween(300)) }
         ) {
+            composable(Screen.Splash.route) {
+                SplashScreen(
+                    onSplashFinished = { isLoggedIn ->
+                        if (isLoggedIn) {
+                            navController.navigate(Screen.Discover.route) {
+                                popUpTo(Screen.Splash.route) { inclusive = true }
+                            }
+                        } else {
+                            navController.navigate(Screen.Onboarding.route) {
+                                popUpTo(Screen.Splash.route) { inclusive = true }
+                            }
+                        }
+                    }
+                )
+            }
+
+            composable(Screen.Onboarding.route) {
+                OnboardingScreen(
+                    onOnboardingFinished = {
+                        navController.navigate(Screen.Login.route) {
+                            popUpTo(Screen.Onboarding.route) { inclusive = true }
+                        }
+                    }
+                )
+            }
+
             composable(Screen.Login.route) {
                 LoginScreen(
                     onLoginSuccess = {
-                        navController.navigate(Screen.Discover.route) {
+                        navController.navigate(Screen.RegionSelection.route) {
                             popUpTo(Screen.Login.route) { inclusive = true }
                         }
                     }
+                )
+            }
+
+            composable(Screen.RegionSelection.route) {
+                RegionSelectionScreen(
+                    onRegionSelected = { region ->
+                        navController.navigate(Screen.Discover.route) {
+                            popUpTo(Screen.RegionSelection.route) { inclusive = true }
+                        }
+                    },
+                    onBackClick = { navController.popBackStack() }
                 )
             }
 
@@ -191,7 +265,7 @@ fun HayiDevNavHost() {
             }
 
             composable(Screen.Live.route) {
-                com.hayidev.app.ui.screens.live.LiveScreen(
+                LiveScreen(
                     onRoomClick = { roomId ->
                         navController.navigate(Screen.LiveRoom.createRoute(roomId))
                     },
@@ -224,14 +298,30 @@ fun HayiDevNavHost() {
                 )
             }
 
-            composable(Screen.RegionSelection.route) {
-                RegionSelectionScreen(
-                    onRegionSelected = { region ->
-                        navController.navigate(Screen.Discover.route) {
-                            popUpTo(Screen.RegionSelection.route) { inclusive = true }
-                        }
-                    },
+            composable(Screen.Premium.route) {
+                PremiumScreen(
                     onBackClick = { navController.popBackStack() }
+                )
+            }
+
+            composable(Screen.Wallet.route) {
+                WalletScreen(
+                    onBackClick = { navController.popBackStack() }
+                )
+            }
+
+            composable(Screen.Notification.route) {
+                NotificationScreen(
+                    onBack = { navController.popBackStack() }
+                )
+            }
+
+            composable(Screen.Search.route) {
+                SearchScreen(
+                    onBack = { navController.popBackStack() },
+                    onUserClick = { user ->
+                        navController.navigate(Screen.OtherProfile.createRoute(user.id))
+                    }
                 )
             }
 
@@ -266,7 +356,7 @@ fun HayiDevNavHost() {
                 LiveRoomScreen(
                     roomId = roomId,
                     onBackClick = { navController.popBackStack() },
-                    onGiftClick = { /* Show gift dialog */ },
+                    onGiftClick = { },
                     onProfileClick = { userId ->
                         navController.navigate(Screen.OtherProfile.createRoute(userId))
                     }
@@ -314,7 +404,6 @@ fun HayiDevNavHost() {
                 )
             }
 
-            // Game Routes
             composable(Screen.GamesHub.route) {
                 GamesHubScreen(
                     onGameClick = { route -> navController.navigate(route) },

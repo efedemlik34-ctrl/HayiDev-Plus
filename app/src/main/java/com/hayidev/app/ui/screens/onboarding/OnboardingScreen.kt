@@ -35,8 +35,7 @@ data class OnboardingPage(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
-    onFinish: () -> Unit = {},
-    onSkip: () -> Unit = {}
+    onOnboardingFinished: () -> Unit = {}
 ) {
     val pages = listOf(
         OnboardingPage(
@@ -225,7 +224,7 @@ fun OnboardingScreen(
                                     pagerState.animateScrollToPage(pagerState.currentPage + 1)
                                 }
                             } else {
-                                onFinish()
+                                onOnboardingFinished()
                             }
                         },
                         colors = ButtonDefaults.buttonColors(

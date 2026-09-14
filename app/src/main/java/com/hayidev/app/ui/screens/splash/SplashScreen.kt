@@ -21,8 +21,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(
-    onNavigateToOnboarding: () -> Unit = {},
-    onNavigateToMain: () -> Unit = {}
+    onSplashFinished: (Boolean) -> Unit = {}
 ) {
     var logoVisible by remember { mutableStateOf(false) }
     var nameVisible by remember { mutableStateOf(false) }
@@ -84,7 +83,11 @@ fun SplashScreen(
         loadingVisible = true
         progress = 1f
         delay(2500)
-        onNavigateToMain()
+        
+        val context = androidx.compose.ui.platform.LocalContext.current
+        val prefs = context.getSharedPreferences("hayidev_prefs", android.content.Context.MODE_PRIVATE)
+        val isLoggedIn = prefs.getBoolean("is_logged_in", false)
+        onSplashFinished(isLoggedIn)
     }
 
     Box(
