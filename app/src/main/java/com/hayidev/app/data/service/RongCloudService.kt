@@ -1,163 +1,98 @@
 package com.hayidev.app.data.service
 
-import android.content.Context
-import com.hayidev.app.data.model.Message
-import com.hayidev.app.data.model.MessageType
-import io.rong.imkit.RongIM
-import io.rong.imlib.RongIMClient
-import io.rong.imlib.model.Conversation
-import io.rong.imlib.model.Message as RongMessage
-import io.rong.imlib.model.MessageContent
-import io.rong.message.TextMessage
-import io.rong.message.ImageMessage
-import io.rong.message.VoiceMessage
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.channels.awaitClose
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.callbackFlow
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
+data class ConversationInfo(
+    val id: String = "",
+    val name: String = "",
+    val avatarUrl: String = "",
+    val lastMessage: String = "",
+    val lastMessageTime: Long = 0L,
+    val unreadCount: Int = 0,
+    val isOnline: Boolean = false
+)
+
+data class ChatMessage(
+    val id: String = "",
+    val senderId: String = "",
+    val receiverId: String = "",
+    val content: String = "",
+    val type: String = "text",
+    val timestamp: Long = System.currentTimeMillis(),
+    val isRead: Boolean = false
+)
+
 @Singleton
-class RongCloudService @Inject constructor(
-    @ApplicationContext private val context: Context
-) {
-    private var isConnected = false
+class RongCloudService @Inject constructor() {
 
-    fun init(appKey: String) {
-        RongIM.init(context, appKey)
-    }
+    private val firestore = FirebaseFirestore.getInstance()
 
-    fun connect(
-        token: String,
-        onSuccess: (() -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        RongIM.connect(token, object : RongIMClient.ConnectCallback() {
-            override fun onSuccess(userId: String?) {
-                isConnected = true
-                onSuccess?.invoke()
-            }
-
-            override fun onError(error: RongIMClient.ErrorCode?) {
-                isConnected = false
-                onError?.invoke(Exception("Connection failed: ${error?.message}"))
-            }
-        })
-    }
-
-    fun disconnect() {
-        RongIM.getInstance().disconnect()
-        isConnected = false
-    }
-
-    fun sendMessage(
-        targetId: String,
-        content: MessageContent,
-        onSuccess: ((Long) -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        RongIM.getInstance().sendMessage(
-            Conversation.ConversationType.PRIVATE,
-            targetId,
-            content,
-            null,
-            null,
-            object : RongIMClient.SendMessageCallback() {
-                override fun onSuccess(messageId: Long) {
-                    onSuccess?.invoke(messageId)
-                }
-
-                override fun onError(messageId: Long?, error: RongIMClient.ErrorCode?) {
-                    onError?.invoke(Exception("Send failed: ${error?.message}"))
-                }
-            }
-        )
-    }
-
-    fun sendTextMessage(
-        targetId: String,
-        text: String,
-        onSuccess: ((Long) -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        val content = TextMessage.obtain(text)
-        sendMessage(targetId, content, onSuccess, onError)
-    }
-
-    fun sendImageMessage(
-        targetId: String,
-        imageUrl: String,
-        onSuccess: ((Long) -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        val content = ImageMessage.obtain(imageUrl)
-        sendMessage(targetId, content, onSuccess, onError)
-    }
-
-    fun sendVoiceMessage(
-        targetId: String,
-        voiceUri: String,
-        duration: Long,
-        onSuccess: ((Long) -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        val content = VoiceMessage.obtain(android.net.Uri.parse(voiceUri), duration)
-        sendMessage(targetId, content, onSuccess, onError)
-    }
-
-    fun getConversations(
-        onSuccess: ((List<Conversation>) -> Unit)? = null,
-        onError: ((Exception) -> Unit)? = null
-    ) {
-        RongIM.getInstance().getConversationList(
-            object : RongIMClient.ResultCallback<List<Conversation>>() {
-                override fun onSuccess(data: List<Conversation>?) {
-                    onSuccess?.invoke(data ?: emptyList())
-                }
-
-                override fun onError(error: RongIMClient.ErrorCode?) {
-                    onError?.invoke(Exception("Get conversations failed: ${error?.message}"))
-                }
-            },
-            Conversation.ConversationType.PRIVATE,
-            Conversation.ConversationType.GROUP
-        )
-    }
-
-    fun observeMessages(targetId: String): Flow<RongMessage> = callbackFlow {
-        val listener = object : RongIMClient.OnReceiveMessageListener {
-            override fun onReceived(message: RongMessage?, p1: Int): Boolean {
-                message?.let { trySend(it) }
-                return true
-            }
-        }
-        RongIM.getInstance().registerMessageListener(listener)
-        awaitClose {
-            RongIM.getInstance().unRegisterMessageListener(listener)
+    suspend fun sendMessage(
+        roomId: String,
+        senderId: String,
+        content: String,
+        type: String = "text"
+    ): Boolean {
+        return try {
+            val message = hashMapOf(
+                "senderId" to senderId,
+                "content" to content,
+                "type" to type,
+                "timestamp" to System.currentTimeMillis(),
+                "isRead" to false
+            )
+            firestore.collection("chats").document(roomId)
+                .collection("messages").add(message).await()
+            true
+        } catch (e: Exception) {
+            false
         }
     }
 
-    fun startConversation(targetId: String) {
-        RongIM.getInstance().startConversation(
-            context,
-            Conversation.ConversationType.PRIVATE,
-            targetId,
-            ""
-        )
-    }
-
-    fun readMessages(targetId: String, timestamp: Long) {
-        RongIM.getInstance().readMessages(
-            Conversation.ConversationType.PRIVATE,
-            targetId,
-            timestamp,
-            object : RongIMClient.ResultCallback<Boolean>() {
-                override fun onSuccess(data: Boolean?) {}
-                override fun onError(error: RongIMClient.ErrorCode?) {}
+    suspend fun getConversations(userId: String): List<ConversationInfo> {
+        return try {
+            val result = firestore.collection("chats")
+                .whereArrayContains("participants", userId)
+                .orderBy("lastMessageTime", Query.Direction.DESCENDING)
+                .get().await()
+            result.documents.map { doc ->
+                ConversationInfo(
+                    id = doc.id,
+                    name = doc.getString("name") ?: "",
+                    avatarUrl = doc.getString("avatarUrl") ?: "",
+                    lastMessage = doc.getString("lastMessage") ?: "",
+                    lastMessageTime = doc.getLong("lastMessageTime") ?: 0L,
+                    unreadCount = (doc.getLong("unreadCount") ?: 0L).toInt()
+                )
             }
-        )
+        } catch (e: Exception) {
+            emptyList()
+        }
     }
 
-    fun isConnected(): Boolean = isConnected
+    suspend fun getMessages(roomId: String, limit: Long = 50): List<ChatMessage> {
+        return try {
+            val result = firestore.collection("chats").document(roomId)
+                .collection("messages")
+                .orderBy("timestamp", Query.Direction.DESCENDING)
+                .limit(limit)
+                .get().await()
+            result.documents.map { doc ->
+                ChatMessage(
+                    id = doc.id,
+                    senderId = doc.getString("senderId") ?: "",
+                    content = doc.getString("content") ?: "",
+                    type = doc.getString("type") ?: "text",
+                    timestamp = doc.getLong("timestamp") ?: 0L,
+                    isRead = doc.getBoolean("isRead") ?: false
+                )
+            }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
 }

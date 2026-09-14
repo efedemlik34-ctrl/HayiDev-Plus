@@ -7,9 +7,6 @@ import com.hayidev.app.data.model.ChatMessageType
 import com.hayidev.app.data.model.User
 import com.hayidev.app.data.service.AnalyticsService
 import com.hayidev.app.data.service.RongCloudService
-import io.rong.message.TextMessage
-import io.rong.message.ImageMessage
-import io.rong.message.VoiceMessage
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -47,7 +44,7 @@ class SendMessageUseCase @Inject constructor(
             )
 
             saveMessage(message)
-            sendViaRongCloud(receiverId, message)
+            rongCloudService.sendMessage(chatId, uid, content, "text")
             updateLastMessage(chatId, message)
             analyticsService.logEvent("message_sent", android.os.Bundle().apply {
                 putString("type", "text")
@@ -80,7 +77,7 @@ class SendMessageUseCase @Inject constructor(
             )
 
             saveMessage(message)
-            rongCloudService.sendImageMessage(receiverId, imageUrl)
+            rongCloudService.sendMessage(chatId, uid, imageUrl, "image")
             updateLastMessage(chatId, message)
             analyticsService.logEvent("message_sent", android.os.Bundle().apply {
                 putString("type", "image")
@@ -115,7 +112,7 @@ class SendMessageUseCase @Inject constructor(
             )
 
             saveMessage(message)
-            rongCloudService.sendVoiceMessage(receiverId, voiceUrl, duration)
+            rongCloudService.sendMessage(chatId, uid, voiceUrl, "voice")
             updateLastMessage(chatId, message)
             analyticsService.logEvent("message_sent", android.os.Bundle().apply {
                 putString("type", "voice")
@@ -212,20 +209,5 @@ class SendMessageUseCase @Inject constructor(
                 "lastMessageSenderId" to message.senderId
             )
         ).await()
-    }
-
-    private fun sendViaRongCloud(receiverId: String, message: ChatMessage) {
-        when (message.type) {
-            ChatMessageType.TEXT -> {
-                rongCloudService.sendTextMessage(receiverId, message.content)
-            }
-            ChatMessageType.IMAGE -> {
-                rongCloudService.sendImageMessage(receiverId, message.imageUrl)
-            }
-            ChatMessageType.VOICE -> {
-                rongCloudService.sendVoiceMessage(receiverId, message.voiceUrl, message.voiceDuration)
-            }
-            else -> {}
-        }
     }
 }

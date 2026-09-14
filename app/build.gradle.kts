@@ -101,7 +101,7 @@ dependencies {
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-google-play-services:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.9.0")
 
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:21.3.0")
@@ -122,8 +122,8 @@ dependencies {
     // WebRTC for video calls
     implementation("io.getstream:stream-webrtc-android:1.2.2")
 
-    // RongCloud for messaging
-    implementation("io.rong:lib-rongimkit:3.0.241")
+    // RongCloud for messaging (custom Maven repo needed - add credentials to local.properties)
+    // implementation("io.rong:lib-rongimkit:3.0.241")
 
     // Google Play Billing
     implementation("com.android.billingclient:billing-ktx:7.1.1")
